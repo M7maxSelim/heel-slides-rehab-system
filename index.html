@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>Heel Slides Rehab</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <h2>نظام إعادة تأهيل الركبة</h2>
+
+  <button id="startCam">تشغيل الكاميرا</button>
+  <button id="stopCam">إيقاف</button>
+
+  <div class="container">
+    <video id="video" autoplay playsinline></video>
+    <canvas id="canvas"></canvas>
+  </div>
+
+  <div class="info">
+    <p>زاوية الركبة: <span id="angle">0</span>°</p>
+  </div>
+  <input type="file" id="uploadVideo" accept="video/*">
+
+  <!-- MediaPipe CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils"></script>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
