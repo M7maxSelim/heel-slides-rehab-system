@@ -1,33 +1,122 @@
 body {
-  text-align: center;
-  font-family: Arial;
+  margin: 0;
+  font-family: 'Cairo', sans-serif;
+  background: #0f172a;
+  color: white;
 }
 
-.container {
+/* 🔥 HERO VIDEO */
+.hero {
   position: relative;
-  width: 640px;
-  height: 480px;
-  margin: auto;
+  height: 90vh;
+  overflow: hidden;
 }
 
+/* تعديل مهم للفيديو */
 video, canvas {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
-}
-
-video {
-  z-index: 1;
+  object-fit: contain;   /* بدل cover عشان مفيش قص */
+  object-position: center;
 }
 
 canvas {
   z-index: 2;
 }
 
-.info {
-  margin-top: 20px;
-  font-size: 20px;
+/* Overlay */
+.overlay {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  padding: 20px;
+}
+
+/* Top bar */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-bar h1 {
+  color: #38bdf8;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.primary {
+  background: #22c55e;
+}
+
+.danger {
+  background: #ef4444;
+}
+
+.upload {
+  background: #6366f1;
+  padding: 8px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.upload input {
+  display: none;
+}
+
+/* Stats */
+.live-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.stat {
+  text-align: center;
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.1);
+  padding: 15px 25px;
+  border-radius: 15px;
+}
+
+.stat span {
+  font-size: 14px;
+  color: #cbd5f5;
+}
+
+.stat h2 {
+  margin: 5px 0 0;
+  font-size: 28px;
+  color: #38bdf8;
+}
+
+/* 🔽 DASHBOARD */
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
 }
