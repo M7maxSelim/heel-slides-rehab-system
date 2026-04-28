@@ -1,31 +1,99 @@
 <!DOCTYPE html>
+
 <html lang="ar">
 <head>
   <meta charset="UTF-8" />
-  <title>Heel Slides Rehab</title>
+  <title>نظام إعادة تأهيل الركبة</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
 
-  <h2>نظام إعادة تأهيل الركبة</h2>
+  <!-- 🔥 VIDEO HERO -->
 
-  <button id="startCam">تشغيل الكاميرا</button>
-  <button id="stopCam">إيقاف</button>
+  <section class="hero">
 
-  <div class="container">
-    <video id="video" autoplay playsinline></video>
-    <canvas id="canvas"></canvas>
+```
+<video id="video" autoplay playsinline></video>
+<canvas id="canvas"></canvas>
+
+<!-- Overlay -->
+<div class="overlay">
+
+  <div class="top-bar">
+    <h1>🦵 Heel System</h1>
+
+    <div class="controls">
+      <button id="startCam" class="btn primary">تشغيل الكاميرا</button>
+      <button id="stopCam" class="btn danger">إيقاف الكاميرا</button>
+
+      <label class="upload">
+        📁 ارفع فيديو
+        <input type="file" id="uploadVideo" accept="video/*">
+      </label>
+    </div>
   </div>
 
-  <div class="info">
-    <p>زاوية الركبة: <span id="angle">0</span>°</p>
-  </div>
-  <input type="file" id="uploadVideo" accept="video/*">
+  <!-- Live Data -->
+  <div class="live-stats">
 
-  <!-- MediaPipe CDN -->
+    <div class="stat">
+      <span>زاوية الركبة</span>
+      <h2 id="angle">0°</h2>
+    </div>
+
+    <div class="stat">
+      <span>الهدف</span>
+      <h2>120°</h2>
+    </div>
+
+    <div class="stat">
+      <span>التكرارات</span>
+      <h2 id="reps">0</h2>
+    </div>
+
+    <div class="stat">
+      <span>التماثل</span>
+      <h2 id="symmetry">0%</h2>
+    </div>
+
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- 🔽 DASHBOARD -->
+
+  <section class="dashboard">
+
+```
+<div class="card">
+  <h3>📊 الأداء</h3>
+  <p>سيتم عرض التقدم هنا</p>
+</div>
+
+<div class="card">
+  <h3>⚠️ الأخطاء</h3>
+  <p id="errors">لا يوجد أخطاء</p>
+</div>
+
+<div class="card">
+  <h3>📅 الجلسات</h3>
+  <p>عدد الجلسات: 0</p>
+</div>
+```
+
+  </section>
+
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils"></script>
 
   <script type="module" src="main.js"></script>
+
 </body>
 </html>

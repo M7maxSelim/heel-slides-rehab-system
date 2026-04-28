@@ -45,11 +45,11 @@ export function onResults(results) {
   
   // 🎯 Feedback Logic
   const TARGET = 100;
-  if (angle < TARGET) {
+  if (angle > TARGET) {
     speak("حاول ثني ركبتك أكثر");
-  } else if (angle >= TARGET && angle <= TARGET + 10) {
-    speak("ممتاز، كمل كده");
-  } else if (angle > TARGET + 10) {
+  } else if (angle <= TARGET && angle > TARGET - 10) {
+    speak("ممتاز، استمر فى الثني");
+  } else if (angle <= TARGET - 10) {
     speak("وصلت للهدف، برافو!");
   }
 
